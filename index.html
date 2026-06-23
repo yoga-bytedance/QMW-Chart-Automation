@@ -40,7 +40,14 @@
     background-size: 28px 28px;
     background-position: -1px -1px;
   }
+  body.app-stage-idle {
+    height: 100vh;
+    overflow: hidden;
+  }
   .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(20px, 4vw, 56px); }
+  body.app-stage-active .wrap {
+    padding-top: 40px;
+  }
 
   /* ---------- Header ---------- */
   header.top {
