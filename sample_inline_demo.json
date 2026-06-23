@@ -1,0 +1,441 @@
+{
+  "format": {
+    "raw": "Q1-Q4 2025 | Jan-Apr 2026 | W18-W22",
+    "Q": [
+      "2025-Q1",
+      "2025-Q2",
+      "2025-Q3",
+      "2025-Q4"
+    ],
+    "M": [
+      "2026-01",
+      "2026-02",
+      "2026-03",
+      "2026-04"
+    ],
+    "W": [
+      "2026-W18",
+      "2026-W19",
+      "2026-W20",
+      "2026-W21",
+      "2026-W22"
+    ]
+  },
+  "charts": [
+    {
+      "title": "ENT + SMB | Daily Revenue Breakdown & YoY Growth by Lever [$K/%]",
+      "unit": "K",
+      "source": "Source: Inline demo dataset (synthetic). Generated for offline rendering.",
+      "mapping": {},
+      "custom_color": {
+        "Search Ads": "#4C6FFF",
+        "In-Feed Video": "#22C7A9",
+        "Live Commerce": "#FFB020",
+        "Brand Lift": "#9B6DFF",
+        "Affiliate": "#FF6B81"
+      },
+      "q": {
+        "rows": [
+          {
+            "Period": "2025-Q1",
+            "Lever": "Search Ads",
+            "Daily Average Revenue": 469.0,
+            "Percentage Difference YoY": 0.9954
+          },
+          {
+            "Period": "2025-Q1",
+            "Lever": "In-Feed Video",
+            "Daily Average Revenue": 387.1,
+            "Percentage Difference YoY": 0.9562
+          },
+          {
+            "Period": "2025-Q1",
+            "Lever": "Live Commerce",
+            "Daily Average Revenue": 301.8,
+            "Percentage Difference YoY": 1.1028
+          },
+          {
+            "Period": "2025-Q1",
+            "Lever": "Brand Lift",
+            "Daily Average Revenue": 134.6,
+            "Percentage Difference YoY": 1.1737
+          },
+          {
+            "Period": "2025-Q1",
+            "Lever": "Affiliate",
+            "Daily Average Revenue": 84.7,
+            "Percentage Difference YoY": 1.1368
+          },
+          {
+            "Period": "2025-Q2",
+            "Lever": "Search Ads",
+            "Daily Average Revenue": 432.5,
+            "Percentage Difference YoY": 0.9654
+          },
+          {
+            "Period": "2025-Q2",
+            "Lever": "In-Feed Video",
+            "Daily Average Revenue": 362.6,
+            "Percentage Difference YoY": 1.3334
+          },
+          {
+            "Period": "2025-Q2",
+            "Lever": "Live Commerce",
+            "Daily Average Revenue": 266.0,
+            "Percentage Difference YoY": 1.0316
+          },
+          {
+            "Period": "2025-Q2",
+            "Lever": "Brand Lift",
+            "Daily Average Revenue": 160.2,
+            "Percentage Difference YoY": 1.3939
+          },
+          {
+            "Period": "2025-Q2",
+            "Lever": "Affiliate",
+            "Daily Average Revenue": 100.0,
+            "Percentage Difference YoY": 1.1183
+          },
+          {
+            "Period": "2025-Q3",
+            "Lever": "Search Ads",
+            "Daily Average Revenue": 563.0,
+            "Percentage Difference YoY": 0.9433
+          },
+          {
+            "Period": "2025-Q3",
+            "Lever": "In-Feed Video",
+            "Daily Average Revenue": 409.5,
+            "Percentage Difference YoY": 1.0648
+          },
+          {
+            "Period": "2025-Q3",
+            "Lever": "Live Commerce",
+            "Daily Average Revenue": 267.8,
+            "Percentage Difference YoY": 0.9789
+          },
+          {
+            "Period": "2025-Q3",
+            "Lever": "Brand Lift",
+            "Daily Average Revenue": 145.9,
+            "Percentage Difference YoY": 1.3281
+          },
+          {
+            "Period": "2025-Q3",
+            "Lever": "Affiliate",
+            "Daily Average Revenue": 88.8,
+            "Percentage Difference YoY": 1.2108
+          },
+          {
+            "Period": "2025-Q4",
+            "Lever": "Search Ads",
+            "Daily Average Revenue": 514.4,
+            "Percentage Difference YoY": 1.1062
+          },
+          {
+            "Period": "2025-Q4",
+            "Lever": "In-Feed Video",
+            "Daily Average Revenue": 376.0,
+            "Percentage Difference YoY": 0.9514
+          },
+          {
+            "Period": "2025-Q4",
+            "Lever": "Live Commerce",
+            "Daily Average Revenue": 260.4,
+            "Percentage Difference YoY": 1.023
+          },
+          {
+            "Period": "2025-Q4",
+            "Lever": "Brand Lift",
+            "Daily Average Revenue": 162.6,
+            "Percentage Difference YoY": 1.1338
+          },
+          {
+            "Period": "2025-Q4",
+            "Lever": "Affiliate",
+            "Daily Average Revenue": 92.6,
+            "Percentage Difference YoY": 1.2128
+          }
+        ]
+      },
+      "m": {
+        "rows": [
+          {
+            "Period": "2026-01",
+            "Lever": "Search Ads",
+            "Daily Average Revenue": 487.7,
+            "Percentage Difference YoY": 1.0699
+          },
+          {
+            "Period": "2026-01",
+            "Lever": "In-Feed Video",
+            "Daily Average Revenue": 402.6,
+            "Percentage Difference YoY": 1.2695
+          },
+          {
+            "Period": "2026-01",
+            "Lever": "Live Commerce",
+            "Daily Average Revenue": 276.4,
+            "Percentage Difference YoY": 1.2072
+          },
+          {
+            "Period": "2026-01",
+            "Lever": "Brand Lift",
+            "Daily Average Revenue": 155.6,
+            "Percentage Difference YoY": 1.3576
+          },
+          {
+            "Period": "2026-01",
+            "Lever": "Affiliate",
+            "Daily Average Revenue": 104.4,
+            "Percentage Difference YoY": 1.064
+          },
+          {
+            "Period": "2026-02",
+            "Lever": "Search Ads",
+            "Daily Average Revenue": 563.5,
+            "Percentage Difference YoY": 0.979
+          },
+          {
+            "Period": "2026-02",
+            "Lever": "In-Feed Video",
+            "Daily Average Revenue": 362.0,
+            "Percentage Difference YoY": 1.2986
+          },
+          {
+            "Period": "2026-02",
+            "Lever": "Live Commerce",
+            "Daily Average Revenue": 268.4,
+            "Percentage Difference YoY": 1.1645
+          },
+          {
+            "Period": "2026-02",
+            "Lever": "Brand Lift",
+            "Daily Average Revenue": 133.8,
+            "Percentage Difference YoY": 1.2541
+          },
+          {
+            "Period": "2026-02",
+            "Lever": "Affiliate",
+            "Daily Average Revenue": 105.4,
+            "Percentage Difference YoY": 1.2065
+          },
+          {
+            "Period": "2026-03",
+            "Lever": "Search Ads",
+            "Daily Average Revenue": 548.5,
+            "Percentage Difference YoY": 1.0769
+          },
+          {
+            "Period": "2026-03",
+            "Lever": "In-Feed Video",
+            "Daily Average Revenue": 391.9,
+            "Percentage Difference YoY": 1.2172
+          },
+          {
+            "Period": "2026-03",
+            "Lever": "Live Commerce",
+            "Daily Average Revenue": 305.7,
+            "Percentage Difference YoY": 1.1481
+          },
+          {
+            "Period": "2026-03",
+            "Lever": "Brand Lift",
+            "Daily Average Revenue": 169.8,
+            "Percentage Difference YoY": 1.3923
+          },
+          {
+            "Period": "2026-03",
+            "Lever": "Affiliate",
+            "Daily Average Revenue": 97.1,
+            "Percentage Difference YoY": 1.2521
+          },
+          {
+            "Period": "2026-04",
+            "Lever": "Search Ads",
+            "Daily Average Revenue": 431.1,
+            "Percentage Difference YoY": 1.2707
+          },
+          {
+            "Period": "2026-04",
+            "Lever": "In-Feed Video",
+            "Daily Average Revenue": 386.7,
+            "Percentage Difference YoY": 1.4165
+          },
+          {
+            "Period": "2026-04",
+            "Lever": "Live Commerce",
+            "Daily Average Revenue": 326.7,
+            "Percentage Difference YoY": 1.0623
+          },
+          {
+            "Period": "2026-04",
+            "Lever": "Brand Lift",
+            "Daily Average Revenue": 149.4,
+            "Percentage Difference YoY": 1.2543
+          },
+          {
+            "Period": "2026-04",
+            "Lever": "Affiliate",
+            "Daily Average Revenue": 84.2,
+            "Percentage Difference YoY": 1.1508
+          }
+        ]
+      },
+      "w": {
+        "rows": [
+          {
+            "Period": "2026-W18",
+            "Lever": "Search Ads",
+            "Daily Average Revenue": 446.6,
+            "Percentage Difference YoY": 0.9785
+          },
+          {
+            "Period": "2026-W18",
+            "Lever": "In-Feed Video",
+            "Daily Average Revenue": 323.2,
+            "Percentage Difference YoY": 1.3041
+          },
+          {
+            "Period": "2026-W18",
+            "Lever": "Live Commerce",
+            "Daily Average Revenue": 266.5,
+            "Percentage Difference YoY": 1.0438
+          },
+          {
+            "Period": "2026-W18",
+            "Lever": "Brand Lift",
+            "Daily Average Revenue": 149.6,
+            "Percentage Difference YoY": 1.3557
+          },
+          {
+            "Period": "2026-W18",
+            "Lever": "Affiliate",
+            "Daily Average Revenue": 85.9,
+            "Percentage Difference YoY": 1.1446
+          },
+          {
+            "Period": "2026-W19",
+            "Lever": "Search Ads",
+            "Daily Average Revenue": 501.5,
+            "Percentage Difference YoY": 1.3617
+          },
+          {
+            "Period": "2026-W19",
+            "Lever": "In-Feed Video",
+            "Daily Average Revenue": 405.3,
+            "Percentage Difference YoY": 1.352
+          },
+          {
+            "Period": "2026-W19",
+            "Lever": "Live Commerce",
+            "Daily Average Revenue": 279.4,
+            "Percentage Difference YoY": 1.1276
+          },
+          {
+            "Period": "2026-W19",
+            "Lever": "Brand Lift",
+            "Daily Average Revenue": 148.1,
+            "Percentage Difference YoY": 1.3621
+          },
+          {
+            "Period": "2026-W19",
+            "Lever": "Affiliate",
+            "Daily Average Revenue": 110.9,
+            "Percentage Difference YoY": 0.9955
+          },
+          {
+            "Period": "2026-W20",
+            "Lever": "Search Ads",
+            "Daily Average Revenue": 447.8,
+            "Percentage Difference YoY": 1.036
+          },
+          {
+            "Period": "2026-W20",
+            "Lever": "In-Feed Video",
+            "Daily Average Revenue": 342.0,
+            "Percentage Difference YoY": 1.1625
+          },
+          {
+            "Period": "2026-W20",
+            "Lever": "Live Commerce",
+            "Daily Average Revenue": 306.5,
+            "Percentage Difference YoY": 1.0514
+          },
+          {
+            "Period": "2026-W20",
+            "Lever": "Brand Lift",
+            "Daily Average Revenue": 132.2,
+            "Percentage Difference YoY": 1.1295
+          },
+          {
+            "Period": "2026-W20",
+            "Lever": "Affiliate",
+            "Daily Average Revenue": 94.1,
+            "Percentage Difference YoY": 1.2032
+          },
+          {
+            "Period": "2026-W21",
+            "Lever": "Search Ads",
+            "Daily Average Revenue": 559.6,
+            "Percentage Difference YoY": 1.2652
+          },
+          {
+            "Period": "2026-W21",
+            "Lever": "In-Feed Video",
+            "Daily Average Revenue": 372.5,
+            "Percentage Difference YoY": 1.2288
+          },
+          {
+            "Period": "2026-W21",
+            "Lever": "Live Commerce",
+            "Daily Average Revenue": 314.0,
+            "Percentage Difference YoY": 0.947
+          },
+          {
+            "Period": "2026-W21",
+            "Lever": "Brand Lift",
+            "Daily Average Revenue": 172.5,
+            "Percentage Difference YoY": 1.31
+          },
+          {
+            "Period": "2026-W21",
+            "Lever": "Affiliate",
+            "Daily Average Revenue": 108.5,
+            "Percentage Difference YoY": 1.3189
+          },
+          {
+            "Period": "2026-W22",
+            "Lever": "Search Ads",
+            "Daily Average Revenue": 478.9,
+            "Percentage Difference YoY": 1.1195
+          },
+          {
+            "Period": "2026-W22",
+            "Lever": "In-Feed Video",
+            "Daily Average Revenue": 328.0,
+            "Percentage Difference YoY": 1.2371
+          },
+          {
+            "Period": "2026-W22",
+            "Lever": "Live Commerce",
+            "Daily Average Revenue": 260.6,
+            "Percentage Difference YoY": 0.9537
+          },
+          {
+            "Period": "2026-W22",
+            "Lever": "Brand Lift",
+            "Daily Average Revenue": 141.4,
+            "Percentage Difference YoY": 1.0012
+          },
+          {
+            "Period": "2026-W22",
+            "Lever": "Affiliate",
+            "Daily Average Revenue": 93.3,
+            "Percentage Difference YoY": 0.9463
+          }
+        ]
+      }
+    }
+  ]
+}

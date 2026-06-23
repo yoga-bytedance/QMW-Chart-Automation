@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>QMW Chart Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --paper:        #f4f0e8;
+    --paper-2:      #efe9de;
+    --card:         #fbf9f4;
+    --ink:          #1c2436;
+    --ink-soft:     #4a5266;
+    --ink-faint:    #8a8f9c;
+    --line:         #ddd5c6;
+    --line-strong:  #cabfa9;
+    --cobalt:       #2f4bff;
+    --cobalt-deep:  #1b32c7;
+    --amber:        #e08a16;
+    --green:        #16936a;
+    --red:          #cf3b34;
+    --shadow:       18px 18px 0 rgba(28,36,54,.06);
+    --radius:       4px;
+    --maxw:         1240px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Space Grotesk", sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    background-image:
+      linear-gradient(var(--paper-2) 1px, transparent 1px),
+      linear-gradient(90deg, var(--paper-2) 1px, transparent 1px);
+    background-size: 28px 28px;
+    background-position: -1px -1px;
+  }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(20px, 4vw, 56px); }
+
+  /* ---------- Header ---------- */
+  header.top {
+    border-bottom: 1.5px solid var(--ink);
+    background: rgba(244,240,232,.85);
+    backdrop-filter: blur(6px);
+    position: sticky; top: 0; z-index: 50;
+  }
+  .top-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px clamp(20px, 4vw, 56px);
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .brand .glyph {
+    width: 40px; height: 40px; border: 1.5px solid var(--ink);
+    display: grid; place-items: center; background: var(--cobalt);
+    position: relative; overflow: hidden;
+  }
+  .brand .glyph::before, .brand .glyph::after {
+    content: ""; position: absolute; background: var(--paper);
+  }
+  .brand .glyph::before { width: 6px; height: 18px; left: 9px; bottom: 8px; }
+  .brand .glyph::after  { width: 6px; height: 11px; right: 9px; bottom: 8px;
+    box-shadow: -10px -4px 0 var(--paper); }
+  .brand h1 {
+    font-family: "Fraunces", serif; font-weight: 600;
+    font-size: 19px; letter-spacing: -.01em; line-height: 1;
+  }
+  .brand span.tag {
+    display: block; font-size: 10.5px; letter-spacing: .22em;
+    text-transform: uppercase; color: var(--ink-faint); margin-top: 3px;
+  }
+  .status-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12px; letter-spacing: .04em; color: var(--ink-soft);
+    border: 1px solid var(--line-strong); padding: 7px 13px; border-radius: 100px;
+    background: var(--card);
+    margin-left: auto;
+  }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ink-faint); }
+  .dot.live { background: var(--green); box-shadow: 0 0 0 3px rgba(22,147,106,.15); }
+  .dot.off  { background: var(--amber); box-shadow: 0 0 0 3px rgba(224,138,22,.15); }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: clamp(40px, 7vw, 84px) 0 clamp(26px, 4vw, 48px); }
+  .hero .eyebrow {
+    font-size: 12px; letter-spacing: .3em; text-transform: uppercase;
+    color: var(--cobalt-deep); font-weight: 600; margin-bottom: 20px;
+  }
+  .hero h2 {
+    font-family: "Fraunces", serif; font-weight: 500;
+    font-size: clamp(36px, 6vw, 68px); line-height: 1.02;
+    letter-spacing: -.025em; max-width: 16ch;
+  }
+  .hero h2 em { font-style: italic; color: var(--cobalt); }
+  .hero p {
+    margin-top: 22px; max-width: 54ch; color: var(--ink-soft);
+    font-size: clamp(15px, 1.5vw, 17px);
+  }
+  .mono-inline {
+    font-family: ui-monospace, "SF Mono", monospace; font-size: .9em;
+    background: var(--paper-2); padding: 1px 6px; border: 1px solid var(--line);
+  }
+  .hero .meta-row {
+    display: flex; flex-wrap: wrap; gap: 28px; margin-top: 30px;
+    padding-top: 24px; border-top: 1px solid var(--line);
+  }
+  .meta-row .m b {
+    font-family: "Fraunces", serif; font-size: 26px; font-weight: 600;
+    display: block; line-height: 1;
+  }
+  .meta-row .m small {
+    font-size: 11.5px; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--ink-faint); margin-top: 6px; display: block;
+  }
+
+  /* ---------- Workbench grid ---------- */
+  .bench {
+    display: grid; grid-template-columns: 1.05fr 1.4fr;
+    gap: clamp(20px, 3vw, 40px); align-items: start;
+    padding-bottom: 90px;
+  }
+  @media (max-width: 940px) { .bench { grid-template-columns: 1fr; }
+    .panel.sticky { position: static !important; } }
+  body.app-stage-idle .bench {
+    grid-template-columns: 1fr;
+    max-width: 760px;
+    margin: 0 auto;
+    min-height: calc(100vh - 280px);
+    align-content: center;
+  }
+  body.app-stage-idle .panel.sticky { position: static !important; }
+  body.app-stage-idle .stack,
+  body.app-stage-idle .output { display: none; }
+  body.app-stage-active .bench {
+    grid-template-columns: 1fr;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  body.app-stage-active .panel.sticky { position: static !important; }
+  body.app-stage-active .stack { width: 100%; }
+
+  .panel {
+    background: var(--card); border: 1.5px solid var(--ink);
+    box-shadow: var(--shadow); position: relative;
+  }
+  .panel > .panel-head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    padding: 16px 20px; border-bottom: 1px solid var(--line);
+  }
+  .panel-head .ph-title {
+    font-family: "Fraunces", serif; font-size: 17px; font-weight: 600;
+  }
+  .panel-head .ph-num {
+    font-size: 11px; letter-spacing: .2em; color: var(--ink-faint);
+    text-transform: uppercase;
+  }
+  .panel-body { padding: 20px; }
+
+  /* ---------- Dropzone ---------- */
+  .drop {
+    display: block; border: 1.5px dashed var(--line-strong); border-radius: var(--radius);
+    padding: 38px 24px; text-align: center; cursor: pointer;
+    transition: border-color .2s ease, background .2s ease, transform .15s ease;
+    background: radial-gradient(circle at 50% 0%, rgba(47,75,255,.04), transparent 70%);
+  }
+  .drop:hover { border-color: var(--cobalt); background: rgba(47,75,255,.035); }
+  .drop.drag {
+    border-color: var(--cobalt); border-style: solid;
+    background: rgba(47,75,255,.07); transform: scale(.995);
+  }
+  .drop.has-file { border-style: solid; border-color: var(--ink); }
+  .drop .ico {
+    width: 56px; height: 56px; margin: 0 auto 16px; border: 1.5px solid var(--ink);
+    display: grid; place-items: center; background: var(--paper);
+    transition: transform .25s cubic-bezier(.22,1,.36,1);
+  }
+  .drop:hover .ico { transform: translateY(-3px) rotate(-3deg); }
+  .drop .ico svg { width: 26px; height: 26px; }
+  .drop .big { font-size: 16px; font-weight: 600; }
+  .drop .big u { text-decoration-color: var(--cobalt); text-underline-offset: 3px; }
+  .drop .sub { font-size: 13px; color: var(--ink-faint); margin-top: 6px; }
+  .drop input { display: none; }
+
+  /* file card */
+  .filecard {
+    display: none; margin-top: 16px; border: 1px solid var(--line-strong);
+    border-left: 3px solid var(--cobalt); background: var(--paper);
+    padding: 14px 16px; align-items: center; gap: 14px;
+  }
+  .filecard.show { display: flex; }
+  .filecard .fi {
+    width: 38px; height: 38px; flex: none; background: var(--ink); color: var(--paper);
+    display: grid; place-items: center; font-size: 10px; font-weight: 700;
+    letter-spacing: .05em;
+  }
+  .filecard .fmeta { flex: 1; min-width: 0; }
+  .filecard .fname {
+    font-weight: 600; font-size: 14px; white-space: nowrap;
+    overflow: hidden; text-overflow: ellipsis;
+  }
+  .filecard .fdesc { font-size: 12px; color: var(--ink-faint); margin-top: 2px; }
+  .filecard .fx {
+    border: none; background: none; cursor: pointer; color: var(--ink-faint);
+    font-size: 20px; line-height: 1; padding: 4px;
+  }
+  .filecard .fx:hover { color: var(--red); }
+
+  /* validation chips */
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .chip {
+    font-size: 12px; padding: 5px 11px; border-radius: 100px;
+    border: 1px solid var(--line-strong); background: var(--paper);
+    color: var(--ink-soft); display: inline-flex; align-items: center; gap: 6px;
+  }
+  .chip b { color: var(--ink); font-weight: 600; }
+  .chip.ok { border-color: rgba(22,147,106,.4); color: var(--green); }
+  .chip.warn { border-color: rgba(224,138,22,.45); color: var(--amber); }
+
+  /* actions */
+  .actions { display: flex; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
+  .btn {
+    font-family: "Space Grotesk", sans-serif; font-size: 14px; font-weight: 600;
+    letter-spacing: .01em; padding: 13px 22px; border: 1.5px solid var(--ink);
+    background: var(--paper); color: var(--ink); cursor: pointer; text-decoration: none;
+    transition: transform .12s ease, box-shadow .12s ease, background .15s ease;
+    display: inline-flex; align-items: center; gap: 9px;
+  }
+  .btn:hover:not(:disabled) { transform: translate(-2px,-2px); box-shadow: 4px 4px 0 var(--ink); }
+  .btn:active:not(:disabled) { transform: translate(0,0); box-shadow: none; }
+  .btn.primary { background: var(--cobalt); color: #fff; border-color: var(--cobalt-deep); }
+  .btn.primary:hover:not(:disabled) { box-shadow: 4px 4px 0 var(--cobalt-deep); }
+  .btn:disabled { opacity: .4; cursor: not-allowed; }
+  .btn svg { width: 16px; height: 16px; }
+  .btn.ghost { background: transparent; }
+
+  /* hint line */
+  .hint {
+    margin-top: 14px; font-size: 12.5px; color: var(--ink-faint);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .hint a { color: var(--cobalt-deep); font-weight: 600; }
+
+  /* ---------- Right column / stages ---------- */
+  .stack { display: flex; flex-direction: column; gap: clamp(20px, 3vw, 28px); }
+
+  .meter-wrap { padding: 20px; }
+  .meter-top {
+    display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 12px;
+  }
+  .meter-top .pct {
+    font-family: "Fraunces", serif; font-size: 30px; font-weight: 600; line-height: 1;
+  }
+  .meter-top .now {
+    font-size: 13px; color: var(--ink-soft); text-align: right; max-width: 60%;
+  }
+  .meter {
+    height: 12px; background: var(--paper-2); border: 1.5px solid var(--ink);
+    position: relative; overflow: hidden;
+  }
+  .meter .fill {
+    height: 100%; width: 0%; background: var(--cobalt);
+    transition: width .5s cubic-bezier(.22,1,.36,1);
+    background-image: repeating-linear-gradient(
+      45deg, transparent, transparent 7px,
+      rgba(255,255,255,.18) 7px, rgba(255,255,255,.18) 14px);
+  }
+  .meter.err .fill { background: var(--red); }
+  .meter.done .fill { background: var(--green); }
+
+  /* stage timeline */
+  .timeline { list-style: none; margin-top: 22px; }
+  .timeline li {
+    display: grid; grid-template-columns: 28px 1fr; gap: 14px;
+    padding-bottom: 16px; position: relative;
+  }
+  .timeline li:not(:last-child)::before {
+    content: ""; position: absolute; left: 13px; top: 22px; bottom: -2px;
+    width: 1.5px; background: var(--line-strong);
+  }
+  .timeline li.done:not(:last-child)::before { background: var(--cobalt); }
+  .timeline .node {
+    width: 28px; height: 28px; border: 1.5px solid var(--line-strong);
+    border-radius: 50%; background: var(--card); display: grid; place-items: center;
+    font-size: 11px; font-weight: 700; color: var(--ink-faint); z-index: 1;
+    transition: all .3s ease;
+  }
+  .timeline li.active .node {
+    border-color: var(--cobalt); color: var(--cobalt);
+    box-shadow: 0 0 0 4px rgba(47,75,255,.12);
+  }
+  .timeline li.active .node .spin {
+    width: 12px; height: 12px; border: 2px solid var(--cobalt);
+    border-top-color: transparent; border-radius: 50%;
+    animation: spin .7s linear infinite;
+  }
+  .timeline li.done .node { border-color: var(--cobalt); background: var(--cobalt); color: #fff; }
+  .timeline li.failed .node { border-color: var(--red); background: var(--red); color: #fff; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .timeline .label {
+    font-size: 14px; color: var(--ink-faint); align-self: center; transition: color .3s;
+  }
+  .timeline li.active .label { color: var(--ink); font-weight: 600; }
+  .timeline li.done .label { color: var(--ink); }
+
+  /* log console */
+  .console-head {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 20px; border-bottom: 1px solid var(--line);
+  }
+  .console-head .ch-title {
+    font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-faint);
+  }
+  .console-head .lights { display: flex; gap: 6px; }
+  .console-head .lights i { width: 9px; height: 9px; border-radius: 50%; border: 1px solid var(--line-strong); }
+  .console {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 12.5px; line-height: 1.7; padding: 16px 20px;
+    max-height: 220px; overflow-y: auto; background: #fcfbf7;
+  }
+  .console .ln { display: flex; gap: 12px; }
+  .console .ts { color: var(--ink-faint); flex: none; }
+  .console .msg { color: var(--ink-soft); word-break: break-word; }
+  .console .ln.success .msg { color: var(--green); }
+  .console .ln.error .msg { color: var(--red); }
+  .console .ln.warn .msg { color: var(--amber); }
+  .console .empty { color: var(--ink-faint); font-style: italic; }
+
+  /* ---------- Output ---------- */
+  .output { margin-top: 8px; padding-bottom: 60px; }
+  .output-head {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    border-bottom: 1.5px solid var(--ink); padding-bottom: 14px; margin-bottom: 26px;
+    flex-wrap: wrap; gap: 16px;
+  }
+  .output-head h3 {
+    font-family: "Fraunces", serif; font-size: clamp(22px, 3vw, 30px); font-weight: 600;
+  }
+  .output-head .sub { font-size: 13px; color: var(--ink-faint); margin-top: 4px; }
+
+  .empty-state {
+    border: 1.5px dashed var(--line-strong); padding: clamp(40px, 7vw, 80px) 24px;
+    text-align: center;
+    background: radial-gradient(circle at 50% 30%, rgba(47,75,255,.04), transparent 65%);
+  }
+  .empty-state .es-glyph { width: 84px; height: 64px; margin: 0 auto 22px; position: relative; }
+  .empty-state .es-glyph .bar {
+    position: absolute; bottom: 0; width: 14px; border: 1.5px solid var(--ink-faint);
+  }
+  .empty-state h4 {
+    font-family: "Fraunces", serif; font-size: 21px; font-weight: 600; margin-bottom: 8px;
+  }
+  .empty-state p { color: var(--ink-faint); max-width: 42ch; margin: 0 auto; font-size: 14px; }
+
+  .charts-grid { display: flex; flex-direction: column; gap: 28px; }
+  .chart-card {
+    border: 1.5px solid var(--ink); background: var(--card); box-shadow: var(--shadow);
+    opacity: 0; transform: translateY(14px); animation: rise .5s cubic-bezier(.22,1,.36,1) forwards;
+  }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+  .chart-card .cc-head {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding: 14px 18px; border-bottom: 1px solid var(--line);
+  }
+  .chart-card .cc-title { font-weight: 600; font-size: 14px; }
+  .chart-card .cc-idx {
+    font-family: "Fraunces", serif; font-size: 13px; color: var(--ink-faint);
+    border: 1px solid var(--line-strong); padding: 2px 9px;
+  }
+  .chart-card .cc-body { padding: 8px; background: #fff; overflow-x: auto; }
+  .chart-card img { display: block; width: 100%; height: auto; }
+  .chart-card .cc-foot {
+    display: flex; justify-content: flex-end; gap: 10px; padding: 12px 18px;
+    border-top: 1px solid var(--line);
+  }
+  .chart-card .cc-foot .btn { padding: 9px 16px; font-size: 13px; }
+  .chart-card.fail { border-color: var(--red); border-left-width: 4px; }
+  .chart-card.fail .cc-body {
+    padding: 22px; background: rgba(207,59,52,.04); color: var(--red); font-size: 13.5px;
+  }
+
+  /* banner */
+  .banner {
+    display: none; align-items: flex-start; gap: 14px; padding: 16px 18px;
+    border: 1.5px solid var(--red); border-left-width: 4px;
+    background: rgba(207,59,52,.05); margin-bottom: 22px;
+  }
+  .banner.show { display: flex; }
+  .banner.info { border-color: var(--amber); background: rgba(224,138,22,.06); }
+  .banner .bi {
+    flex: none; width: 22px; height: 22px; border-radius: 50%; color: #fff;
+    background: var(--red); display: grid; place-items: center; font-weight: 700; font-size: 13px;
+  }
+  .banner.info .bi { background: var(--amber); }
+  .banner .bt b { display: block; margin-bottom: 3px; font-size: 14px; }
+  .banner .bt p { font-size: 13px; color: var(--ink-soft); }
+
+</style>
+</head>
+<body class="app-stage-idle">
+<header class="top">
+  <div class="top-inner">
+    <div class="brand">
+      <div class="glyph" aria-hidden="true"></div>
+      <div>
+        <h1>QMW Chart Studio</h1>
+        <span class="tag">Quarter · Month · Week Renderer</span>
+      </div>
+    </div>
+    <div class="status-pill" id="statusPill">
+      <span class="dot" id="statusDot"></span>
+      <span id="statusText">Checking engine…</span>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Internal Analytics · Revenue &amp; YoY Visualization</p>
+    <h2>Turn a template into a <em>publication-ready</em> QMW chart.</h2>
+    <p>Drop a chart-template JSON and the studio runs the production
+       <span class="mono-inline">qmw_chart_workflow</span> pipeline — validating structure,
+       resolving Quarter / Month / Week grains, and rendering high-resolution stacked-area
+       &amp; year-over-year charts you can review and export.</p>
+    <div class="meta-row">
+      <div class="m"><b>Q·M·W</b><small>Tri-grain layout</small></div>
+      <div class="m"><b>220<span style="font-size:14px">dpi</span></b><small>Print resolution</small></div>
+      <div class="m"><b>Inline<span style="font-size:14px"> / Live</span></b><small>Data modes</small></div>
+      <div class="m"><b>SSE</b><small>Live progress</small></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="bench">
+    <!-- LEFT: upload + validation -->
+    <div class="panel sticky" style="position:sticky;top:88px">
+      <div class="panel-head">
+        <span class="ph-title">Template Source</span>
+        <span class="ph-num">Step 01</span>
+      </div>
+      <div class="panel-body">
+        <label class="drop" id="drop" for="fileInput">
+          <input type="file" id="fileInput" accept=".json,application/json" />
+          <div class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1c2436" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 16V4M12 4l-4 4M12 4l4 4"/><path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/>
+            </svg>
+          </div>
+          <div class="big"><u>Click to upload</u> or drag a file here</div>
+          <div class="sub">QMW template · <b>.json</b> · up to 25&nbsp;MB</div>
+        </label>
+
+        <div class="filecard" id="fileCard">
+          <div class="fi">JSON</div>
+          <div class="fmeta">
+            <div class="fname" id="fileName">—</div>
+            <div class="fdesc" id="fileDesc">—</div>
+          </div>
+          <button class="fx" id="fileRemove" title="Remove" aria-label="Remove file">×</button>
+        </div>
+
+        <div class="chips" id="chips"></div>
+
+        <div class="actions">
+          <button class="btn primary" id="genBtn" disabled>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            Generate Chart
+          </button>
+          <button class="btn ghost" id="resetBtn">Reset</button>
+        </div>
+        <div class="hint">
+          New here? <a href="#" id="sampleLink">Download a sample template</a> to try it offline.
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: progress -->
+    <div class="stack">
+      <div class="panel">
+        <div class="panel-head">
+          <span class="ph-title">Generation Progress</span>
+          <span class="ph-num">Step 02</span>
+        </div>
+        <div class="meter-wrap">
+          <div class="meter-top">
+            <span class="pct" id="pct">0%</span>
+            <span class="now" id="nowStage">Idle — awaiting a template.</span>
+          </div>
+          <div class="meter" id="meter"><div class="fill" id="meterFill"></div></div>
+          <ul class="timeline" id="timeline"></ul>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="console-head">
+          <span class="ch-title">Process Log</span>
+          <span class="lights"><i></i><i></i><i></i></span>
+        </div>
+        <div class="console" id="console">
+          <div class="empty">No activity yet. Logs stream here during generation.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OUTPUT -->
+  <section class="output" id="output">
+    <div class="output-head">
+      <div>
+        <h3>Chart Preview</h3>
+        <div class="sub" id="outputSub">Rendered output appears below once generation completes.</div>
+      </div>
+      <button class="btn" id="downloadAll" disabled>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12M12 16l-4-4M12 16l4-4"/><path d="M4 20h16"/></svg>
+        Download Result
+      </button>
+    </div>
+
+    <div class="banner" id="banner">
+      <span class="bi" id="bannerIcon">!</span>
+      <div class="bt"><b id="bannerTitle"></b><p id="bannerMsg"></p></div>
+    </div>
+
+    <div id="emptyState" class="empty-state">
+      <div class="es-glyph" id="esGlyph"></div>
+      <h4>Your chart canvas is empty</h4>
+      <p>Upload and validate a QMW template, then press <b>Generate Chart</b>. The
+         finished stacked-area &amp; YoY visualization will render right here.</p>
+    </div>
+
+    <div class="charts-grid" id="chartsGrid" style="display:none"></div>
+  </section>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  const API = "";
+  const STAGES = [
+    "File uploaded successfully", "Validating JSON structure",
+    "Reading chart configuration", "Processing Q/M/W data",
+    "Generating chart layout", "Rendering chart image",
+    "Finalizing output", "Chart generation completed",
+  ];
+
+  const $ = (id) => document.getElementById(id);
+  const drop = $("drop"), fileInput = $("fileInput"), fileCard = $("fileCard");
+  const fileName = $("fileName"), fileDesc = $("fileDesc"), fileRemove = $("fileRemove");
+  const chips = $("chips"), genBtn = $("genBtn"), resetBtn = $("resetBtn");
+  const pct = $("pct"), nowStage = $("nowStage"), meter = $("meter"), meterFill = $("meterFill");
+  const timeline = $("timeline"), consoleEl = $("console");
+  const emptyState = $("emptyState"), chartsGrid = $("chartsGrid");
+  const outputSub = $("outputSub"), downloadAll = $("downloadAll");
+  const banner = $("banner"), bannerIcon = $("bannerIcon"), bannerTitle = $("bannerTitle"), bannerMsg = $("bannerMsg");
+
+  let state = { jobId: null, file: null, mdp: false, charts: [], generated: 0, es: null };
+
+  function setLayoutStage(stage) {
+    document.body.classList.remove("app-stage-idle", "app-stage-active");
+    document.body.classList.add(stage === "active" ? "app-stage-active" : "app-stage-idle");
+  }
+
+  STAGES.forEach((s, i) => {
+    const li = document.createElement("li");
+    li.dataset.stage = i;
+    li.innerHTML = `<span class="node">${i + 1}</span><span class="label"></span>`;
+    li.querySelector(".label").textContent = s;
+    timeline.appendChild(li);
+  });
+  (function () {
+    const g = $("esGlyph"); const h = [60, 38, 80, 52, 70];
+    h.forEach((v, i) => {
+      const b = document.createElement("span");
+      b.className = "bar";
+      b.style.left = (i * 17) + "px"; b.style.height = (v * .64) + "px";
+      b.style.background = i % 2 ? "var(--paper)" : "var(--line-strong)";
+      g.appendChild(b);
+    });
+  })();
+
+  fetch(API + "/healthz").then(r => r.json()).then(d => {
+    state.mdp = !!d.mdp_cli;
+    const dot = $("statusDot"), txt = $("statusText");
+    if (d.mdp_cli) { dot.className = "dot live"; txt.textContent = "Engine ready · live data"; }
+    else { dot.className = "dot off"; txt.textContent = "Engine ready · inline only"; }
+  }).catch(() => {
+    $("statusDot").className = "dot off"; $("statusText").textContent = "Engine offline";
+  });
+
+  function fmtBytes(n) {
+    if (n < 1024) return n + " B";
+    if (n < 1048576) return (n / 1024).toFixed(1) + " KB";
+    return (n / 1048576).toFixed(2) + " MB";
+  }
+  function clock() { return new Date().toTimeString().slice(0, 8); }
+  function addChip(text, cls) {
+    const c = document.createElement("span");
+    c.className = "chip" + (cls ? " " + cls : "");
+    c.innerHTML = text;
+    chips.appendChild(c);
+  }
+  function clearLog() { consoleEl.innerHTML = ""; }
+  function log(message, level) {
+    const empty = consoleEl.querySelector(".empty");
+    if (empty) empty.remove();
+    const ln = document.createElement("div");
+    ln.className = "ln " + (level || "info");
+    ln.innerHTML = `<span class="ts">${clock()}</span><span class="msg"></span>`;
+    ln.querySelector(".msg").textContent = message;
+    consoleEl.appendChild(ln);
+    consoleEl.scrollTop = consoleEl.scrollHeight;
+  }
+  function setStage(idx, percent) {
+    if (typeof percent === "number") {
+      meterFill.style.width = percent + "%";
+      pct.textContent = Math.round(percent) + "%";
+    }
+    if (idx >= 0 && idx < STAGES.length) nowStage.textContent = STAGES[idx];
+    [...timeline.children].forEach((li, i) => {
+      li.classList.remove("active", "failed");
+      const node = li.querySelector(".node");
+      if (i < idx) { li.classList.add("done"); node.textContent = "✓"; }
+      else if (i === idx) {
+        li.classList.add("active"); li.classList.remove("done");
+        node.innerHTML = `<span class="spin"></span>`;
+      } else { li.classList.remove("done"); node.textContent = (i + 1); }
+    });
+  }
+  function markAllDone() {
+    [...timeline.children].forEach(li => {
+      li.classList.add("done"); li.classList.remove("active");
+      li.querySelector(".node").textContent = "✓";
+    });
+    meter.classList.add("done");
+  }
+  function showBanner(kind, title, msg) {
+    banner.className = "banner show" + (kind === "info" ? " info" : "");
+    bannerIcon.textContent = kind === "info" ? "i" : "!";
+    bannerTitle.textContent = title; bannerMsg.textContent = msg;
+  }
+  function hideBanner() { banner.className = "banner"; }
+
+  function pickFile(file) {
+    if (!file) return;
+    if (!file.name.toLowerCase().endsWith(".json")) {
+      chips.innerHTML = ""; addChip("✕ Not a .json file", "warn");
+      drop.classList.remove("has-file");
+      showBanner("error", "Unsupported file type", "Please choose a file with a .json extension.");
+      return;
+    }
+    state.file = file;
+    drop.classList.add("has-file");
+    fileName.textContent = file.name;
+    fileDesc.textContent = fmtBytes(file.size) + " · validating…";
+    fileCard.classList.add("show");
+    chips.innerHTML = "";
+    uploadAndValidate(file);
+  }
+
+  function uploadAndValidate(file) {
+    genBtn.disabled = true;
+    const fd = new FormData(); fd.append("file", file);
+    fetch(API + "/upload", { method: "POST", body: fd })
+      .then(async r => ({ ok: r.ok, body: await r.json() }))
+      .then(({ ok, body }) => {
+        if (!ok || !body.ok) {
+          fileDesc.textContent = "validation failed";
+          chips.innerHTML = "";
+          addChip("✕ Invalid template", "warn");
+          showBanner("error", "Could not read this template",
+            (body.error || "Unknown error.") + "  →  Fix the file and upload again.");
+          return;
+        }
+        hideBanner();
+        state.jobId = body.job_id;
+        state.charts = body.charts || [];
+        fileDesc.textContent = fmtBytes(body.size) + " · validated";
+        chips.innerHTML = "";
+        addChip(`<b>${body.chart_count}</b>&nbsp;chart${body.chart_count === 1 ? "" : "s"}`, "ok");
+        addChip(`mode:&nbsp;<b>${body.data_mode}</b>`, body.data_mode === "inline" ? "ok" : "");
+        if (body.format) addChip(body.format);
+        if (body.data_mode === "live" && !body.mdp_available) {
+          addChip("⚠ live data needs mdp-cli auth", "warn");
+          showBanner("info", "Live data mode detected",
+            "This template fetches values through mdp-cli, which requires Lark authorization. " +
+            "You can still generate — the log will report the auth status. For an offline test, " +
+            "use a template that embeds inline rows.");
+        }
+        genBtn.disabled = false;
+      })
+      .catch(err => {
+        fileDesc.textContent = "upload failed";
+        showBanner("error", "Upload failed", String(err) + "  →  Check the engine is running and retry.");
+      });
+  }
+
+  function generate() {
+    if (!state.jobId) return;
+    setLayoutStage("active");
+    genBtn.disabled = true; resetBtn.disabled = false;
+    state.generated = 0;
+    chartsGrid.innerHTML = ""; chartsGrid.style.display = "none";
+    emptyState.style.display = "block";
+    downloadAll.disabled = true;
+    meter.classList.remove("err", "done");
+    hideBanner();
+    clearLog();
+    setStage(0, 4);
+
+    fetch(API + "/generate-chart", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ job_id: state.jobId }),
+    }).then(r => r.json()).then(d => {
+      if (!d.ok) throw new Error(d.error || "Could not start generation");
+      streamEvents(state.jobId);
+    }).catch(err => {
+      meter.classList.add("err");
+      showBanner("error", "Generation failed to start", String(err.message || err));
+      genBtn.disabled = false;
+    });
+  }
+
+  function streamEvents(jobId) {
+    if (state.es) { state.es.close(); state.es = null; }
+    let resolved = false;
+    const es = new EventSource(API + "/events/" + jobId);
+    state.es = es;
+    es.addEventListener("stage", e => { const d = JSON.parse(e.data); setStage(d.stage_index, d.percent); });
+    es.addEventListener("log", e => { const d = JSON.parse(e.data); log(d.message, d.level); });
+    es.addEventListener("chart", e => { renderChartCard(JSON.parse(e.data)); });
+    es.addEventListener("done", e => {
+      resolved = true; const d = JSON.parse(e.data);
+      es.close(); state.es = null; finishRun(d);
+    });
+    es.onerror = () => {
+      es.close(); state.es = null;
+      if (resolved) return;
+      pollLoop(jobId);
+    };
+  }
+
+  function pollLoop(jobId) {
+    let lastLog = 0;
+    const tick = () => {
+      fetch(API + "/progress/" + jobId).then(r => r.json()).then(p => {
+        if (!p.ok) return;
+        setStage(p.stage_index, p.percent);
+        (p.logs || []).slice(lastLog).forEach(l => log(l.message, l.level));
+        lastLog = (p.logs || []).length;
+        (p.charts || []).forEach(c => {
+          if (!document.querySelector(`[data-chart="${c.index}"]`)) renderChartCard(c);
+        });
+        if (p.state === "done" || p.state === "error") {
+          finishRun({ ok: p.state === "done", generated: (p.summary || {}).generated || 0,
+                      failed: (p.summary || {}).failed || 0, total: (p.summary || {}).total || 0,
+                      error: p.error });
+        } else { setTimeout(tick, 900); }
+      }).catch(() => setTimeout(tick, 1500));
+    };
+    tick();
+  }
+
+  function renderChartCard(d) {
+    if (document.querySelector(`[data-chart="${d.index}"]`)) return;
+    emptyState.style.display = "none";
+    chartsGrid.style.display = "flex";
+    const card = document.createElement("div");
+    card.className = "chart-card" + (d.ok === false ? " fail" : "");
+    card.dataset.chart = d.index;
+    const meta = state.charts.find(c => c.index === d.index) || {};
+    const title = d.title || meta.title || ("Chart " + (d.index + 1));
+    const idxLabel = "#" + String(d.index + 1).padStart(2, "0");
+    if (d.ok === false) {
+      card.innerHTML =
+        `<div class="cc-head"><span class="cc-title"></span><span class="cc-idx">${idxLabel}</span></div>
+         <div class="cc-body"></div>`;
+      card.querySelector(".cc-title").textContent = title;
+      card.querySelector(".cc-body").textContent = "⚠ " + (d.error || "Rendering failed.");
+    } else {
+      state.generated++;
+      card.innerHTML =
+        `<div class="cc-head"><span class="cc-title"></span><span class="cc-idx">${idxLabel}</span></div>
+         <div class="cc-body"><img alt="" loading="lazy" src="${API + d.url}"></div>
+         <div class="cc-foot">
+           <a class="btn ghost" href="${API + "/chart/" + state.jobId + "/" + d.index}" target="_blank" rel="noopener">
+             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"/></svg>
+             Open full size
+           </a>
+           <a class="btn" href="${API + "/chart/" + state.jobId + "/" + d.index + "?download=1"}">
+             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12M12 16l-4-4M12 16l4-4"/><path d="M4 20h16"/></svg>
+             PNG
+           </a>
+         </div>`;
+      card.querySelector(".cc-title").textContent = title;
+      card.querySelector("img").alt = title;
+    }
+    chartsGrid.appendChild(card);
+  }
+
+  function finishRun(d) {
+    if (d.ok && d.generated > 0) {
+      setStage(STAGES.length - 1, 100);
+      markAllDone();
+      nowStage.textContent = "Chart generation completed";
+      outputSub.textContent =
+        `${d.generated} chart${d.generated === 1 ? "" : "s"} rendered` +
+        (d.failed ? ` · ${d.failed} failed` : "") + ".";
+      downloadAll.disabled = false;
+      if (d.failed) showBanner("info", "Partially completed",
+        `${d.generated} of ${d.total} charts rendered. ${d.failed} failed — see the cards below.`);
+    } else {
+      meter.classList.add("err");
+      const active = timeline.querySelector("li.active");
+      if (active) { active.classList.add("failed"); active.classList.remove("active");
+        active.querySelector(".node").textContent = "✕"; }
+      nowStage.textContent = "Generation stopped";
+      showBanner("error", "Generation did not complete",
+        (d.error || "No charts could be rendered.") + "  →  Review the process log above for the failed step.");
+    }
+    genBtn.disabled = false;
+  }
+
+  function resetAll() {
+    if (state.es) { state.es.close(); state.es = null; }
+    setLayoutStage("idle");
+    state = { jobId: null, file: null, mdp: state.mdp, charts: [], generated: 0, es: null };
+    fileInput.value = "";
+    drop.classList.remove("has-file", "drag");
+    fileCard.classList.remove("show");
+    chips.innerHTML = "";
+    genBtn.disabled = true;
+    meterFill.style.width = "0%"; pct.textContent = "0%";
+    meter.classList.remove("err", "done");
+    nowStage.textContent = "Idle — awaiting a template.";
+    setStage(-1);
+    consoleEl.innerHTML = '<div class="empty">No activity yet. Logs stream here during generation.</div>';
+    chartsGrid.innerHTML = ""; chartsGrid.style.display = "none";
+    emptyState.style.display = "block";
+    outputSub.textContent = "Rendered output appears below once generation completes.";
+    downloadAll.disabled = true;
+    hideBanner();
+  }
+
+  fileInput.addEventListener("change", e => pickFile(e.target.files[0]));
+  ["dragenter", "dragover"].forEach(ev =>
+    drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add("drag"); }));
+  ["dragleave", "drop"].forEach(ev =>
+    drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove("drag"); }));
+  drop.addEventListener("drop", e => {
+    const f = e.dataTransfer.files && e.dataTransfer.files[0];
+    if (f) pickFile(f);
+  });
+  fileRemove.addEventListener("click", e => { e.preventDefault(); resetAll(); });
+  genBtn.addEventListener("click", generate);
+  resetBtn.addEventListener("click", resetAll);
+  downloadAll.addEventListener("click", () => {
+    if (state.jobId) window.location.href = API + "/download/" + state.jobId;
+  });
+  $("sampleLink").addEventListener("click", e => {
+    e.preventDefault(); window.location.href = API + "/sample";
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1107 @@
+{
+  "format": {
+    "raw": "Format:\nQ: 2025-Q1, 2025-Q2, 2025-Q3, 2025-Q4\nM: 2026-01, 2026-02, 2026-03, 2026-04, 2026-05\nW: 2026-W22(05/31~06/06), 2026-W23(06/07~06/13)",
+    "Q": [
+      "2025-Q1",
+      "2025-Q2",
+      "2025-Q3",
+      "2025-Q4"
+    ],
+    "M": [
+      "2026-01",
+      "2026-02",
+      "2026-03",
+      "2026-04",
+      "2026-05"
+    ],
+    "W": [
+      "2026-W22(05/31~06/06)",
+      "2026-W23(06/07~06/13)"
+    ]
+  },
+  "charts": [
+    {
+      "title": "ENT + SMB-ID | Daily Revenue Breakdown & YoY Growth by Lever [$K/%]",
+      "unit": "K",
+      "source": "Source: CALM_Performance_LITE_FullSnapshot_Dataset, Daily Latest Binding;\nExclude internal shadow (DC w SEA other teams), exclude TTO",
+      "mapping": {
+        "Branding": "Branding & Traffic"
+      },
+      "fixed_bottom": [
+        "Branding & Traffic",
+        "TTS",
+        "Openloop C",
+        "Apps",
+        "Leads",
+        "Gaming"
+      ],
+      "custom_color": {
+        "Branding & Traffic": "#C30A3E",
+        "TTS": "#0070C0",
+        "Openloop C": "#A00C95",
+        "Apps": "#4F3ED6",
+        "Leads": "#EC6803",
+        "Gaming": "#027770"
+      },
+      "q": {
+        "report_id": "1216288",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1216288"
+      },
+      "m": {
+        "report_id": "1216289",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1216289"
+      },
+      "w": {
+        "report_id": "1216290",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1216290"
+      }
+    },
+    {
+      "title": "ENT-ID | Daily Revenue Breakdown & YoY Growth by Lever [$K/%]",
+      "unit": "K",
+      "source": "Source: CALM_Performance_LITE_FullSnapshot_Dataset, Daily Latest Binding;\nExclude internal shadow (DC w SEA other teams), exclude TTO",
+      "mapping": {
+        "Branding": "Branding & Traffic"
+      },
+      "fixed_bottom": [
+        "Branding & Traffic",
+        "TTS",
+        "Openloop C",
+        "Apps",
+        "Leads",
+        "Gaming"
+      ],
+      "custom_color": {
+        "Branding & Traffic": "#C30A3E",
+        "TTS": "#0070C0",
+        "Openloop C": "#A00C95",
+        "Apps": "#4F3ED6",
+        "Leads": "#EC6803",
+        "Gaming": "#027770"
+      },
+      "q": {
+        "report_id": "1216301",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1216301"
+      },
+      "m": {
+        "report_id": "1216302",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1216302"
+      },
+      "w": {
+        "report_id": "1216303",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1216303"
+      }
+    },
+    {
+      "title": "SMB-ID | Daily Revenue Breakdown & YoY Growth by Lever [$K/%]",
+      "unit": "K",
+      "source": "Source: CALM_Performance_LITE_FullSnapshot_Dataset, Daily Latest Binding;\nExclude internal shadow (DC w SEA other teams), exclude TTO",
+      "mapping": {
+        "Branding": "Branding & Traffic"
+      },
+      "fixed_bottom": [
+        "Branding & Traffic",
+        "TTS",
+        "Openloop C",
+        "Apps",
+        "Leads",
+        "Gaming"
+      ],
+      "custom_color": {
+        "Branding & Traffic": "#C30A3E",
+        "TTS": "#0070C0",
+        "Openloop C": "#A00C95",
+        "Apps": "#4F3ED6",
+        "Leads": "#EC6803",
+        "Gaming": "#027770"
+      },
+      "q": {
+        "report_id": "1216308",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1216308"
+      },
+      "m": {
+        "report_id": "1216309",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1216309"
+      },
+      "w": {
+        "report_id": "1216310",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1216310"
+      }
+    },
+    {
+      "title": "ENT + SMB-ID | Daily Revenue Breakdown & YoY Growth by Lever [$K/%] (Exld Branding & TTS)",
+      "unit": "K",
+      "source": "Source: CALM_Performance_LITE_FullSnapshot_Dataset, Daily Latest Binding;\nExclude internal shadow (DC w SEA other teams), exclude TTO",
+      "mapping": {},
+      "fixed_bottom": [
+        "Openloop C",
+        "Apps",
+        "Leads",
+        "Gaming"
+      ],
+      "custom_color": {
+        "Openloop C": "#A00C95",
+        "Apps": "#4F3ED6",
+        "Leads": "#EC6803",
+        "Gaming": "#027770"
+      },
+      "q": {
+        "report_id": "1216311",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1216311"
+      },
+      "m": {
+        "report_id": "1216313",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1216313"
+      },
+      "w": {
+        "report_id": "1216314",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1216314"
+      }
+    },
+    {
+      "title": "ENT-ID | Daily Revenue Breakdown & YoY Growth by Lever [$K/%] (Exld Branding & TTS)",
+      "unit": "K",
+      "source": "Source: CALM_Performance_LITE_FullSnapshot_Dataset, Daily Latest Binding;\nExclude internal shadow (DC w SEA other teams), exclude TTO",
+      "mapping": {},
+      "fixed_bottom": [
+        "Openloop C",
+        "Apps",
+        "Leads",
+        "Gaming"
+      ],
+      "custom_color": {
+        "Openloop C": "#A00C95",
+        "Apps": "#4F3ED6",
+        "Leads": "#EC6803",
+        "Gaming": "#027770"
+      },
+      "q": {
+        "report_id": "1216320",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1216320"
+      },
+      "m": {
+        "report_id": "1216321",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1216321"
+      },
+      "w": {
+        "report_id": "1216322",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1216322"
+      }
+    },
+    {
+      "title": "SMB-ID | Daily Revenue Breakdown & YoY Growth by Lever [$K/%] (Exld Branding & TTS)",
+      "unit": "K",
+      "source": "Source: CALM_Performance_LITE_FullSnapshot_Dataset, Daily Latest Binding;\nExclude internal shadow (DC w SEA other teams), exclude TTO",
+      "mapping": {},
+      "fixed_bottom": [
+        "Openloop C",
+        "Apps",
+        "Leads",
+        "Gaming"
+      ],
+      "custom_color": {
+        "Openloop C": "#A00C95",
+        "Apps": "#4F3ED6",
+        "Leads": "#EC6803",
+        "Gaming": "#027770"
+      },
+      "q": {
+        "report_id": "1217049",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1217049"
+      },
+      "m": {
+        "report_id": "1217050",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1217050"
+      },
+      "w": {
+        "report_id": "1217051",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1217051"
+      }
+    },
+    {
+      "title": "ENT-ID | Daily Revenue Breakdown & YoY Growth by Direct Team [$K/%]",
+      "unit": "K",
+      "source": "Source: CALM_Performance_LITE_FullSnapshot_Dataset, Daily Latest Binding;\nExclude internal shadow (DC w SEA other teams), exclude TTO",
+      "mapping": {
+        "Global Business Solutions-APAC-SEA-ID-ID CPG-CPG A": "CPG A",
+        "Global Business Solutions-APAC-SEA-ID-ID CPG-CPG B": "CPG B",
+        "Global Business Solutions-APAC-SEA-ID-ID CPG-CPG C": "CPG C"
+      },
+      "fixed_bottom": [
+        "CPG A",
+        "CPG B",
+        "CPG C",
+        "Ecommerce A",
+        "Ecommerce B",
+        "App & Web"
+      ],
+      "custom_color": {
+        "CPG A": "#c30a3e",
+        "CPG B": "#007870",
+        "CPG C": "#4f3ed6",
+        "Ecommerce A": "#e97132",
+        "Ecommerce B": "#0070c0",
+        "App & Web": "#a00c95"
+      },
+      "q": {
+        "report_id": "1217063",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1217063"
+      },
+      "m": {
+        "report_id": "1217069",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1217069"
+      },
+      "w": {
+        "report_id": "1217071",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1217071"
+      }
+    },
+    {
+      "title": "SMB-ID | Daily Revenue Breakdown & YoY Growth by Direct Team [$K/%]",
+      "unit": "K",
+      "source": "Source: CALM_Performance_LITE_FullSnapshot_Dataset, Daily Latest Binding;\nExclude internal shadow (DC w SEA other teams), exclude TTO",
+      "mapping": {
+        "Global Business Solutions-APAC-SEA-ID-SMB-Account Management-Commerce Team 1": "Commerce 1",
+        "Global Business Solutions-APAC-SEA-ID-SMB-Account Management-Commerce Team 2": "Commerce 2",
+        "Global Business Solutions-APAC-SEA-ID-SMB-Account Management-Content & Services": "Non-Commerce",
+        "Global Business Solutions-APAC-SEA-ID-SMB-New Business": "HVA"
+      },
+      "fixed_bottom": [
+        "Commerce 1",
+        "Commerce 2",
+        "Non-Commerce",
+        "HVA"
+      ],
+      "custom_color": {
+        "Commerce 1": "#c30a3e",
+        "Commerce 2": "#007870",
+        "Non-Commerce": "#4f3ed6",
+        "HVA": "#e97132"
+      },
+      "q": {
+        "report_id": "1217128",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1217128"
+      },
+      "m": {
+        "report_id": "1217131",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1217131"
+      },
+      "w": {
+        "report_id": "1217132",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1217132"
+      }
+    },
+    {
+      "title": "ENT-ID Agency | Daily Revenue Breakdown & YoY Growth by Big6/Indie [$K/%]",
+      "unit": "K",
+      "source": "Source: CALM_Performance_LITE_FullSnapshot_Dataset, Daily Latest Binding;\nInclude internal shadow (DC w SEA other teams), exclude TTO",
+      "mapping": {
+        "Indies": "Indie",
+        "Big6": "Big6"
+      },
+      "fixed_bottom": [
+        "Big6",
+        "Indies"
+      ],
+      "custom_color": {
+        "Big6": "#0070c0",
+        "Indies": "#e97132"
+      },
+      "q": {
+        "report_id": "1217137",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1217137"
+      },
+      "m": {
+        "report_id": "1217138",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1217138"
+      },
+      "w": {
+        "report_id": "1217141",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1217141"
+      }
+    },
+    {
+      "title": "ENT-ID Agency | Daily Revenue Breakdown & YoY Growth by Sales Model [$K/%]",
+      "unit": "K",
+      "source": "Source: CALM_Performance_LITE_FullSnapshot_Dataset, Daily Latest Binding;\nInclude internal shadow (DC w SEA other teams), exclude TTO",
+      "mapping": {
+        "ID Agency Only": "Agency Only",
+        "Same-country Overlap": "Overlap",
+        "ID SHADOW": "Shadow"
+      },
+      "fixed_bottom": [
+        "Agency Only",
+        "Overlap",
+        "Shadow"
+      ],
+      "custom_color": {
+        "Agency Only": "#0070c0",
+        "Overlap": "#4DA701",
+        "Shadow": "#e97132"
+      },
+      "q": {
+        "report_id": "1217178",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1217178"
+      },
+      "m": {
+        "report_id": "1217180",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1217180"
+      },
+      "w": {
+        "report_id": "1217182",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1217182"
+      }
+    },
+    {
+      "title": "ID-ENT | TTS Daily Revenue Breakdown & YoY Growth by Direct Team [$K/%] excld DC",
+      "unit": "K",
+      "source": "Source: Daily Latest is SEA sales binding\nExcld. Double Counting\nExcld. TTO",
+      "mapping": {
+        "Global Business Solutions-APAC-SEA-ID-ID CPG-CPG C": "CPG C",
+        "Global Business Solutions-APAC-SEA-ID-ID CPG-CPG B": "CPG B",
+        "Global Business Solutions-APAC-SEA-ID-ID CPG-CPG A": "CPG A"
+      },
+      "fixed_bottom": [
+        "CPG A",
+        "CPG B",
+        "CPG C",
+        "Ecommerce A",
+        "Ecommerce B",
+        "App & Web",
+        "AO"
+      ],
+      "custom_color": {},
+      "subplot_format": null,
+      "period_format": null,
+      "q": {
+        "report_id": "1214614",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1214614"
+      },
+      "m": {
+        "report_id": "1214618",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1214618"
+      },
+      "w": {
+        "report_id": "1214620",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1214620"
+      }
+    },
+    {
+      "title": "ID-SMB | TTS Daily Revenue Breakdown & YoY Growth by Direct Team [$K/%] excld DC",
+      "unit": "K",
+      "source": "Source: Daily Latest is SEA sales binding\nExcld. Double Counting\nExcld. TTO",
+      "mapping": {
+        "Global Business Solutions-APAC-SEA-ID-SMB-Account Management-Commerce Team 1": "Commerce 1",
+        "Global Business Solutions-APAC-SEA-ID-SMB-Account Management-Commerce Team 2": "Commerce 2",
+        "Global Business Solutions-APAC-SEA-ID-SMB-Account Management-Content & Services": "Non-Commerce",
+        "Global Business Solutions-APAC-SEA-ID-SMB-New Business": "HVA"
+      },
+      "fixed_bottom": [
+        "HVA",
+        "Non-Commerce",
+        "Commerce 2",
+        "Commerce 1"
+      ],
+      "custom_color": {
+        "HVA": "#0E74C2",
+        "Non-Commerce": "#FF761A",
+        "Commerce 1": "#A12E92",
+        "Commerce 2": "#FFD209"
+      },
+      "subplot_format": null,
+      "period_format": null,
+      "q": {
+        "report_id": "1214622",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1214622"
+      },
+      "m": {
+        "report_id": "1214625",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1214625"
+      },
+      "w": {
+        "report_id": "1214627",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1214627"
+      }
+    },
+    {
+      "title": "Branding ID | Daily Revenue Breakdown & YoY Growth Funnel [$K/%]",
+      "unit": "K",
+      "source": "Source: CALM_Performance_LITE_FullSnapshot_Dataset\nDaily Latest Binding; exclude internal shadow",
+      "mapping": {},
+      "fixed_bottom": null,
+      "custom_color": {},
+      "subplot_format": null,
+      "period_format": null,
+      "q": {
+        "report_id": "1214662",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1214662"
+      },
+      "m": {
+        "report_id": "1214668",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1214668"
+      },
+      "w": {
+        "report_id": "1214670",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1214670"
+      }
+    },
+    {
+      "title": "Consideration Ads ID | Daily Revenue Breakdown & YoY Growth by Team [$K/%]",
+      "unit": "K",
+      "source": "Source: Daily Latest is SEA sales binding\nExcld. Double Counting\nExcld TTO",
+      "mapping": {
+        "Global Business Solutions-APAC-SEA-ID-ID CPG-CPG C": "CPG C",
+        "Global Business Solutions-APAC-SEA-ID-ID CPG-CPG B": "CPG B",
+        "Global Business Solutions-APAC-SEA-ID-ID CPG-CPG A": "CPG A",
+        "Global Business Solutions-APAC-SEA-ID-ID Apps & Web Business": "Apps & Web",
+        "Global Business Solutions-APAC-SEA-ID-Ecommerce-Ecommerce A": "Ecommerce A",
+        "Global Business Solutions-APAC-SEA-ID-Ecommerce-Ecommerce B": "Ecommerce B"
+      },
+      "fixed_bottom": null,
+      "custom_color": {},
+      "subplot_format": [
+        {
+          "name": "Daily average of Dollar Revenue Real",
+          "type": "stackplot",
+          "title": "Revenue ($K)",
+          "format": {
+            "label_kind": "number",
+            "unit": "K"
+          }
+        }
+      ],
+      "period_format": {
+        "raw": "Format:\nQ: \nM: \nW: 2026-W14(04/05~04/11), 2026-W15(04/12~04/18), 2026-W16(04/19~04/25), 2026-W17(04/26~05/02), 2026-W18(05/03~05/09), 2026-W19(05/10~05/16), 2026-W20(05/17~05/23), 2026-W21(05/24~05/30), 2026-W22(05/31~06/06), 2026-W23(06/07~06/13)",
+        "Q": [],
+        "M": [],
+        "W": [
+          "2026-W14(04/05~04/11)",
+          "2026-W15(04/12~04/18)",
+          "2026-W16(04/19~04/25)",
+          "2026-W17(04/26~05/02)",
+          "2026-W18(05/03~05/09)",
+          "2026-W19(05/10~05/16)",
+          "2026-W20(05/17~05/23)",
+          "2026-W21(05/24~05/30)",
+          "2026-W22(05/31~06/06)",
+          "2026-W23(06/07~06/13)"
+        ]
+      },
+      "q": {},
+      "m": {},
+      "w": {
+        "report_id": "1214698",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1214698"
+      }
+    },
+    {
+      "title": "Branding ID | Daily Revenue & YoY Growth by Client Type [$K/%]",
+      "unit": "K",
+      "source": "Source: Daily Latest is SEA sales binding\nExcld. Double Counting\nExcld. TTO",
+      "mapping": {},
+      "fixed_bottom": null,
+      "custom_color": {},
+      "subplot_format": [
+        {
+          "name": "Daily average of Dollar Revenue Real",
+          "type": "stackplot",
+          "title": "Latest GA vs Large Local",
+          "format": {
+            "label_kind": "number",
+            "unit": "K"
+          }
+        }
+      ],
+      "period_format": null,
+      "q": {
+        "report_id": "1214760",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1214760"
+      },
+      "m": {
+        "report_id": "1214766",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1214766"
+      },
+      "w": {
+        "report_id": "1214769",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1214769"
+      }
+    },
+    {
+      "title": "Branding ID | Daily Revenue & YoY Growth by Vertical [$K/%]",
+      "unit": "K",
+      "source": "Source: Daily Latest is SEA sales binding\nExcld. Double Counting\nExcld. TTO",
+      "mapping": {},
+      "fixed_bottom": null,
+      "custom_color": {},
+      "subplot_format": [
+        {
+          "name": "Daily average of Dollar Revenue Real",
+          "type": "stackplot",
+          "title": "Industry vs SMB",
+          "format": {
+            "label_kind": "number",
+            "unit": "K"
+          }
+        }
+      ],
+      "period_format": null,
+      "q": {
+        "report_id": "1214773",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1214773 "
+      },
+      "m": {
+        "report_id": "1214775",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1214775"
+      },
+      "w": {
+        "report_id": "1214778",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1214778"
+      }
+    },
+    {
+      "title": "ID Apps | Daily Revenue & YoY Growth by Client Type [$K/%]",
+      "unit": "K",
+      "source": "Source: CALM_Performance_LITE_FullSnapshot_Dataset\nDaily Latest Binding; exclude internal shadow",
+      "mapping": {},
+      "fixed_bottom": null,
+      "custom_color": {},
+      "subplot_format": null,
+      "period_format": null,
+      "q": {
+        "report_id": "1229541",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1229541"
+      },
+      "m": {
+        "report_id": "1229540",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1229540"
+      },
+      "w": {
+        "report_id": "1229537",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1229537"
+      }
+    },
+    {
+      "title": "ID Apps | Top Apps Revenue Breakdown [$K/%]",
+      "unit": "K",
+      "source": "Source: CALM_Performance_LITE_FullSnapshot_Dataset\nDaily Latest Binding; exclude internal shadow",
+      "mapping": {},
+      "fixed_bottom": null,
+      "custom_color": {},
+      "subplot_format": [
+        {
+          "name": "Daily average of Dollar Revenue Real",
+          "type": "stackplot",
+          "title": "Revenue ($K)",
+          "format": {
+            "label_kind": "number",
+            "unit": "K"
+          }
+        }
+      ],
+      "period_format": {
+        "raw": "Format:\nQ: \nM: \nW: 2026-W14(04/05~04/11), 2026-W15(04/12~04/18), 2026-W16(04/19~04/25), 2026-W17(04/26~05/02), 2026-W18(05/03~05/09), 2026-W19(05/10~05/16), 2026-W20(05/17~05/23), 2026-W21(05/24~05/30), 2026-W22(05/31~06/06), , 2026-W23(06/07~06/13)",
+        "Q": [],
+        "M": [],
+        "W": [
+          "2026-W14(04/05~04/11)",
+          "2026-W15(04/12~04/18)",
+          "2026-W16(04/19~04/25)",
+          "2026-W17(04/26~05/02)",
+          "2026-W18(05/03~05/09)",
+          "2026-W19(05/10~05/16)",
+          "2026-W20(05/17~05/23)",
+          "2026-W21(05/24~05/30)",
+          "2026-W22(05/31~06/06)", 
+          "2026-W23(06/07~06/13)"
+        ]
+      },
+      "q": {},
+      "m": {},
+      "w": {
+        "report_id": "1214925",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1214925"
+      }
+    },
+    {
+      "title": "ID Apps | Emerging Apps Revenue Breakdown [$K/%]",
+      "unit": "K",
+      "source": "Source: CALM_Performance_LITE_FullSnapshot_Dataset\nDaily Latest Binding; exclude internal shadow",
+      "mapping": {},
+      "fixed_bottom": null,
+      "custom_color": {},
+      "subplot_format": [
+        {
+          "name": "Daily average of Dollar Revenue Real",
+          "type": "stackplot",
+          "title": "Revenue ($K)",
+          "format": {
+            "label_kind": "number",
+            "unit": "K"
+          }
+        }
+      ],
+      "period_format": {
+        "raw": "Format:\nQ: \nM: \nW: 2026-W14(04/05~04/11), 2026-W15(04/12~04/18), 2026-W16(04/19~04/25), 2026-W17(04/26~05/02), 2026-W18(05/03~05/09), 2026-W19(05/10~05/16), 2026-W20(05/17~05/23), 2026-W21(05/24~05/30), 2026-W22(05/31~06/06), 2026-W23(06/07~06/13)",
+        "Q": [],
+        "M": [],
+        "W": [
+          "2026-W14(04/05~04/11)",
+          "2026-W15(04/12~04/18)",
+          "2026-W16(04/19~04/25)",
+          "2026-W17(04/26~05/02)",
+          "2026-W18(05/03~05/09)",
+          "2026-W19(05/10~05/16)",
+          "2026-W20(05/17~05/23)",
+          "2026-W21(05/24~05/30)",
+          "2026-W22(05/31~06/06)", 
+          "2026-W23(06/07~06/13)"
+        ]
+      },
+      "q": {},
+      "m": {},
+      "w": {
+        "report_id": "1214997",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1214997"
+      }
+    },
+    {
+      "title": "ID Apps | Investment Apps Revenue Breakdown [$K/%]",
+      "unit": "K",
+      "source": "Source: CALM_Performance_LITE_FullSnapshot_Dataset\nDaily Latest Binding; exclude internal shadow",
+      "mapping": {},
+      "fixed_bottom": null,
+      "custom_color": {},
+      "subplot_format": [
+        {
+          "name": "Daily average of Dollar Revenue Real",
+          "type": "stackplot",
+          "title": "Revenue ($K)",
+          "format": {
+            "label_kind": "number",
+            "unit": "K"
+          }
+        }
+      ],
+      "period_format": {
+        "raw": "Format:\nQ: \nM: \nW: 2026-W14(04/05~04/11), 2026-W15(04/12~04/18), 2026-W16(04/19~04/25), 2026-W17(04/26~05/02), 2026-W18(05/03~05/09), 2026-W19(05/10~05/16), 2026-W20(05/17~05/23), 2026-W21(05/24~05/30), 2026-W22(05/31~06/06), 2026-W23(06/07~06/13)",
+        "Q": [],
+        "M": [],
+        "W": [
+          "2026-W14(04/05~04/11)",
+          "2026-W15(04/12~04/18)",
+          "2026-W16(04/19~04/25)",
+          "2026-W17(04/26~05/02)",
+          "2026-W18(05/03~05/09)",
+          "2026-W19(05/10~05/16)",
+          "2026-W20(05/17~05/23)",
+          "2026-W21(05/24~05/30)",
+          "2026-W22(05/31~06/06)", 
+          "2026-W23(06/07~06/13)"
+        ]
+      },
+      "q": {},
+      "m": {},
+      "w": {
+        "report_id": "1215021",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1215021"
+      }
+    },
+    {
+      "title": "ID Apps | Agency Only Daily Revenue & Group Cnt & ARPA by New/Existing [$K/%]",
+      "unit": "K",
+      "source": "Source: CALM_Performance_LITE_FullSnapshot_Dataset\nDaily Latest Binding\nExcld. internal shadow",
+      "mapping": {},
+      "fixed_bottom": null,
+      "custom_color": {},
+      "subplot_format": [
+        {
+          "name": "Daily average of Dollar Revenue Real",
+          "type": "stackplot",
+          "title": "Daily Revenue",
+          "format": {
+            "label_kind": "number",
+            "unit": "K"
+          }
+        },
+        {
+          "name": "Active Group Count",
+          "type": "stackplot",
+          "title": "Group Count",
+          "format": {
+            "label_kind": "number",
+            "unit": "None"
+          }
+        },
+        {
+          "name": "Active Group Daily ARPU",
+          "type": "line",
+          "title": "Daily ARPA",
+          "format": {
+            "label_kind": "number",
+            "unit": "None"
+          }
+        }
+      ],
+      "period_format": {
+        "raw": "Format:\nQ: \nM: \nW: 2026-W14(04/05~04/11), 2026-W15(04/12~04/18), 2026-W16(04/19~04/25), 2026-W17(04/26~05/02), 2026-W18(05/03~05/09), 2026-W19(05/10~05/16), 2026-W20(05/17~05/23), 2026-W21(05/24~05/30), 2026-W22(05/31~06/06), 2026-W23(06/07~06/13)",
+        "Q": [],
+        "M": [],
+        "W": [
+          "2026-W14(04/05~04/11)",
+          "2026-W15(04/12~04/18)",
+          "2026-W16(04/19~04/25)",
+          "2026-W17(04/26~05/02)",
+          "2026-W18(05/03~05/09)",
+          "2026-W19(05/10~05/16)",
+          "2026-W20(05/17~05/23)",
+          "2026-W21(05/24~05/30)",
+          "2026-W22(05/31~06/06)", 
+          "2026-W23(06/07~06/13)"
+        ]
+      },
+      "q": {},
+      "m": {},
+      "w": {
+        "report_id": "1215804",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1215804"
+      }
+    },
+    {
+      "title": "ID OLC | Daily Revenue & YoY Growth by Lever [$K/%]",
+      "unit": "K",
+      "source": "Source: CALM_Performance_LITE_FullSnapshot_Dataset\nDaily Latest Binding; exclude internal shadow",
+      "mapping": {},
+      "fixed_bottom": null,
+      "custom_color": {},
+      "subplot_format": null,
+      "period_format": null,
+      "q": {
+        "report_id": "1215058",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1215058"
+      },
+      "m": {
+        "report_id": "1215060",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1215060"
+      },
+      "w": {
+        "report_id": "1215063",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1215063"
+      }
+    },
+    {
+      "title": "ID OLC | Daily Revenue & YoY Growth by AO vs Sub Lever [$K/%]",
+      "unit": "K",
+      "source": "Source: CALM_Performance_LITE_FullSnapshot_Dataset\nDaily Latest Binding; exclude internal shadow",
+      "mapping": {},
+      "fixed_bottom": null,
+      "custom_color": {},
+      "subplot_format": null,
+      "period_format": null,
+      "q": {
+        "report_id": "1215074",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1215074"
+      },
+      "m": {
+        "report_id": "1215168",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/b/biportal/report/edit/1215168"
+      },
+      "w": {
+        "report_id": "1215174",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1215174"
+      }
+    },
+    {
+      "title": "ID App-C | Daily Revenue Breakdown & YoY Growth by Top 3 App-C [$K/%]",
+      "unit": "K",
+      "source": "Source: CALM_Performance_LITE_FullSnapshot_Dataset\nDaily Latest Binding; exclude internal shadow",
+      "mapping": {},
+      "fixed_bottom": null,
+      "custom_color": {},
+      "subplot_format": null,
+      "period_format": null,
+      "q": {
+        "report_id": "1215199",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1215199"
+      },
+      "m": {
+        "report_id": "1215200",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1215200"
+      },
+      "w": {
+        "report_id": "1215203",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1215203"
+      }
+    },
+    {
+      "title": "ID Web-C | Daily Revenue Breakdown & YoY Growth by by Top 3 Web-C [$K/%]",
+      "unit": "K",
+      "source": "Source: CALM_Performance_LITE_FullSnapshot_Dataset\nDaily Latest Binding; exclude internal shadow",
+      "mapping": {},
+      "fixed_bottom": null,
+      "custom_color": {},
+      "subplot_format": null,
+      "period_format": null,
+      "q": {
+        "report_id": "1215216",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1215216"
+      },
+      "m": {
+        "report_id": "1215220",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1215220"
+      },
+      "w": {
+        "report_id": "1215221",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1215221"
+      }
+    },
+    {
+      "title": "ID OLC | Agency Only Daily Revenue & Group Cnt & ARPA by New/Existing [$K]",
+      "unit": "K",
+      "source": "Source: Daily Latest is SEA sales binding\nExld. Double Counting\nExld. TTO",
+      "mapping": {},
+      "fixed_bottom": null,
+      "custom_color": {},
+      "subplot_format": [
+        {
+          "name": "Daily average of Dollar Revenue Real",
+          "type": "stackplot",
+          "format": {
+            "label_kind": "number",
+            "unit": "K"
+          }
+        },
+        {
+          "name": "Active Group Count",
+          "type": "stackplot",
+          "format": {
+            "label_kind": "number",
+            "unit": "None"
+          }
+        },
+        {
+          "name": "Active Group Daily ARPU (W)",
+          "type": "line",
+          "format": {
+            "label_kind": "number",
+            "unit": "None"
+          }
+        }
+      ],
+      "period_format": {
+        "raw": "Format:\nQ: \nM: \nW: 2026-W14(04/05~04/11), 2026-W15(04/12~04/18), 2026-W16(04/19~04/25), 2026-W17(04/26~05/02), 2026-W18(05/03~05/09), 2026-W19(05/10~05/16), 2026-W20(05/17~05/23), 2026-W21(05/24~05/30), 2026-W22(05/31~06/06), 2026-W23(06/07~06/13)",
+        "Q": [],
+        "M": [],
+        "W": [
+          "2026-W14(04/05~04/11)",
+          "2026-W15(04/12~04/18)",
+          "2026-W16(04/19~04/25)",
+          "2026-W17(04/26~05/02)",
+          "2026-W18(05/03~05/09)",
+          "2026-W19(05/10~05/16)",
+          "2026-W20(05/17~05/23)",
+          "2026-W21(05/24~05/30)",
+          "2026-W22(05/31~06/06)", 
+          "2026-W23(06/07~06/13)"
+        ]
+      },
+      "q": {},
+      "m": {},
+      "w": {
+        "report_id": "1215328",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1215328"
+      }
+    },
+    {
+      "title": "ID Leads | Daily Revenue & Group Cnt & ARPA by Direct vs Agency [$K/%]",
+      "unit": "K",
+      "source": "Source: CALM_Performance_LITE_FullSnapshot_Dataset\nDaily Latest Binding; exclude internal shadow",
+      "mapping": {},
+      "fixed_bottom": null,
+      "custom_color": {},
+      "subplot_format": [
+        {
+          "name": "Daily average of Dollar Revenue Real",
+          "type": "stackplot",
+          "title": "Daily Revenue",
+          "format": {
+            "label_kind": "number",
+            "unit": "K"
+          }
+        },
+        {
+          "name": "Active Backup Group CNT",
+          "type": "stackplot",
+          "title": "Group Count",
+          "format": {
+            "label_kind": "number",
+            "unit": "None"
+          }
+        },
+        {
+          "name": "Active Backup Group ARPA",
+          "type": "line",
+          "title": "Daily ARPA",
+          "format": {
+            "label_kind": "number",
+            "unit": "None"
+          }
+        }
+      ],
+      "period_format": null,
+      "q": {
+        "report_id": "1215392",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1215392"
+      },
+      "m": {
+        "report_id": "1215393",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1215393"
+      },
+      "w": {
+        "report_id": "1215395",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1215395"
+      }
+    },
+    {
+      "title": "ID Leads | Revenue Breakdown & YoY Growth by AO vs Industry [$K/%]",
+      "unit": "K",
+      "source": "Source: CALM_Performance_LITE_FullSnapshot_Dataset\nDaily Latest Binding; exclude internal shadow",
+      "mapping": {},
+      "fixed_bottom": null,
+      "custom_color": {},
+      "subplot_format": null,
+      "period_format": null,
+      "q": {
+        "report_id": "1215401",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1215401"
+      },
+      "m": {
+        "report_id": "1215404",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1215404"
+      },
+      "w": {
+        "report_id": "1215407",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1215407"
+      }
+    },
+    {
+      "title": "ID Leads | Agency Only Daily Revenue & Group Cnt & ARPA by New/Existing [$K/%]",
+      "unit": "K",
+      "source": "Source: CALM_Performance_LITE_FullSnapshot_Dataset\nDaily Latest Binding; exclude internal shadow",
+      "mapping": {},
+      "fixed_bottom": null,
+      "custom_color": {},
+      "subplot_format": [
+        {
+          "name": "Daily average of Dollar Revenue Real",
+          "type": "stackplot",
+          "title": "Daily Revenue",
+          "format": {
+            "label_kind": "number",
+            "unit": "K"
+          }
+        },
+        {
+          "name": "Active Group Count",
+          "type": "stackplot",
+          "title": "Group Count",
+          "format": {
+            "label_kind": "number",
+            "unit": "None"
+          }
+        },
+        {
+          "name": "Active Group Daily ARPU",
+          "type": "line",
+          "title": "Daily ARPA",
+          "format": {
+            "label_kind": "number",
+            "unit": "None"
+          }
+        }
+      ],
+      "period_format": {
+        "raw": "Format:\nQ: \nM: \nW: 2026-W14(04/05~04/11), 2026-W15(04/12~04/18), 2026-W16(04/19~04/25), 2026-W17(04/26~05/02), 2026-W18(05/03~05/09), 2026-W19(05/10~05/16), 2026-W20(05/17~05/23), 2026-W21(05/24~05/30), 2026-W22(05/31~06/06), 2026-W23(06/07~06/13)",
+        "Q": [],
+        "M": [],
+        "W": [
+          "2026-W14(04/05~04/11)",
+          "2026-W15(04/12~04/18)",
+          "2026-W16(04/19~04/25)",
+          "2026-W17(04/26~05/02)",
+          "2026-W18(05/03~05/09)",
+          "2026-W19(05/10~05/16)",
+          "2026-W20(05/17~05/23)",
+          "2026-W21(05/24~05/30)",
+          "2026-W22(05/31~06/06)", 
+          "2026-W23(06/07~06/13)"
+        ]
+      },
+      "q": {},
+      "m": {},
+      "w": {
+        "report_id": "1215417",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1215417"
+      }
+    },
+    {
+      "title": "ID Team | Agency Only Daily Revenue & Group Cnt & ARPA by New/Existing [$K/%]",
+      "unit": "K",
+      "source": "Source: CALM_Performance_LITE_FullSnapshot_Dataset\nDaily Latest Binding\nExcld. internal shadow",
+      "mapping": {},
+      "fixed_bottom": null,
+      "custom_color": {},
+      "subplot_format": [
+        {
+          "name": "Daily average of Dollar Revenue Real",
+          "type": "stackplot",
+          "title": "Daily Revenue",
+          "format": {
+            "label_kind": "number",
+            "unit": "K"
+          }
+        },
+        {
+          "name": "Active Group Count",
+          "type": "stackplot",
+          "title": "Group Count",
+          "format": {
+            "label_kind": "number",
+            "unit": "None"
+          }
+        },
+        {
+          "name": "Active Group Daily ARPU",
+          "type": "line",
+          "title": "Daily ARPA",
+          "format": {
+            "label_kind": "number",
+            "unit": "None"
+          }
+        }
+      ],
+      "period_format": {
+        "raw": "Format:\nQ: \nM: \nW: 2026-W14(04/05~04/11), 2026-W15(04/12~04/18), 2026-W16(04/19~04/25), 2026-W17(04/26~05/02), 2026-W18(05/03~05/09), 2026-W19(05/10~05/16), 2026-W20(05/17~05/23), 2026-W21(05/24~05/30), 2026-W22(05/31~06/06), 2026-W23(06/07~06/13)",
+        "Q": [],
+        "M": [],
+        "W": [
+          "2026-W14(04/05~04/11)",
+          "2026-W15(04/12~04/18)",
+          "2026-W16(04/19~04/25)",
+          "2026-W17(04/26~05/02)",
+          "2026-W18(05/03~05/09)",
+          "2026-W19(05/10~05/16)",
+          "2026-W20(05/17~05/23)",
+          "2026-W21(05/24~05/30)",
+          "2026-W22(05/31~06/06)",
+          "2026-W23(06/07~06/13)"
+        ]
+      },
+      "q": {},
+      "m": {},
+      "w": {
+        "report_id": "1200141",
+        "url": "https://mmm.tiktok-row.net/apps/analytics/biportal/report/edit/1200141"
+      }
+    }
+  ]
+}
