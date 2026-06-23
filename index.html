@@ -87,39 +87,6 @@
   .dot.live { background: var(--green); box-shadow: 0 0 0 3px rgba(22,147,106,.15); }
   .dot.off  { background: var(--amber); box-shadow: 0 0 0 3px rgba(224,138,22,.15); }
 
-  /* ---------- Hero ---------- */
-  .hero { padding: clamp(40px, 7vw, 84px) 0 clamp(26px, 4vw, 48px); }
-  .hero .eyebrow {
-    font-size: 12px; letter-spacing: .3em; text-transform: uppercase;
-    color: var(--cobalt-deep); font-weight: 600; margin-bottom: 20px;
-  }
-  .hero h2 {
-    font-family: "Fraunces", serif; font-weight: 500;
-    font-size: clamp(36px, 6vw, 68px); line-height: 1.02;
-    letter-spacing: -.025em; max-width: 16ch;
-  }
-  .hero h2 em { font-style: italic; color: var(--cobalt); }
-  .hero p {
-    margin-top: 22px; max-width: 54ch; color: var(--ink-soft);
-    font-size: clamp(15px, 1.5vw, 17px);
-  }
-  .mono-inline {
-    font-family: ui-monospace, "SF Mono", monospace; font-size: .9em;
-    background: var(--paper-2); padding: 1px 6px; border: 1px solid var(--line);
-  }
-  .hero .meta-row {
-    display: flex; flex-wrap: wrap; gap: 28px; margin-top: 30px;
-    padding-top: 24px; border-top: 1px solid var(--line);
-  }
-  .meta-row .m b {
-    font-family: "Fraunces", serif; font-size: 26px; font-weight: 600;
-    display: block; line-height: 1;
-  }
-  .meta-row .m small {
-    font-size: 11.5px; letter-spacing: .16em; text-transform: uppercase;
-    color: var(--ink-faint); margin-top: 6px; display: block;
-  }
-
   /* ---------- Workbench grid ---------- */
   .bench {
     display: grid; grid-template-columns: 1.05fr 1.4fr;
@@ -428,23 +395,6 @@
     </div>
   </div>
 </header>
-
-<section class="hero">
-  <div class="wrap">
-    <p class="eyebrow">Internal Analytics · Revenue &amp; YoY Visualization</p>
-    <h2>Turn a template into a <em>publication-ready</em> QMW chart.</h2>
-    <p>Drop a chart-template JSON and the studio runs the production
-       <span class="mono-inline">qmw_chart_workflow</span> pipeline — validating structure,
-       resolving Quarter / Month / Week grains, and rendering high-resolution stacked-area
-       &amp; year-over-year charts you can review and export.</p>
-    <div class="meta-row">
-      <div class="m"><b>Q·M·W</b><small>Tri-grain layout</small></div>
-      <div class="m"><b>220<span style="font-size:14px">dpi</span></b><small>Print resolution</small></div>
-      <div class="m"><b>Inline<span style="font-size:14px"> / Live</span></b><small>Data modes</small></div>
-      <div class="m"><b>SSE</b><small>Live progress</small></div>
-    </div>
-  </div>
-</section>
 
 <div class="wrap">
   <div class="bench">
